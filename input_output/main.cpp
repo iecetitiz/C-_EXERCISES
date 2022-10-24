@@ -2,19 +2,44 @@
 
 using namespace std;
 
+
+//************ call by value (xx0)
+//void Increment(int value)
+ //  {
+   //    value++;
+   //}
+
+//***** call by reference (xx1)
+//void Increment(int* value)
+//{
+  //  (*value)++;
+//}
+
 int main()
 {
-    char name[50];
-    int age;
-    char className[30];
-    int grade;
-    cout<<"Enter your name: "<<endl;
-    cin>>name;
-    cout<<"Enter your age: "<<endl;
-    cin>>age;
-    cout << "Your name is: "<<name<<" Your age is: "<<age<<endl;
-    cout<<"Enter your class and degree: "<<endl;
-    cin>>className>>grade;
-    cout<<"Your class name is: "<<className<<" Your grade is: "<<grade<<endl;
-    return 0;
+    //******** pointer and bu pointerin icindeki deger
+   //int var = 8;
+   //int* ptr = &var; &'i burda adresi almak icin kullandim
+   //*ptr = 10;
+   //cout<<*ptr;
+
+   //************** (xx0)
+   //int a = 5;
+   //Increment(a);
+   //cout<<a;
+
+
+   //************** (xx1)
+   //int a = 5;
+   //Increment(&a);
+   //cout<<a;
+
+   int a = 5;
+   int& ref = a; //ellerimle ref'e a"nin anahtarini vermis oldum
+   ref = 2;
+   cout<<a;
+
+
+
+
 }
