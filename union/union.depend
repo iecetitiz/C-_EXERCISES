@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1668355551 source:c:\workspace\c++\union\main.cpp
+	<iostream>
+	<string.h>
+	<stdio.h>
+
+1668355504 source:c:\workspace\c++\union\untitled1.cpp
+	<iostream>
+	<string.h>
+	<stdio.h>
+
