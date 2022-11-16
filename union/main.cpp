@@ -4,31 +4,44 @@
 
 using namespace std;
 
+ struct k {
+        char ch1;
+        char ch2;
+        char ch3;
+        char ch4;
+    } ;
+
 union student {
 int age;
-char ch;
+struct k  name;
 
 };
 
+void foo (int a[],int size) {
 
+}
 int main()
 {
 
-   // cout << sizeof(union student) << endl;
-   // union student s;
+   int x[10];
+//   cout << sizeof(x) / 4 << endl;
+foo(x, 10);
+    cout << sizeof(union student) << endl;
+    union student s;
 
-    //s.ch = 'a';
-    //cout << s.age << endl;
-    //cout << s.ch << endl;
-    int static static_array[7];
+s.name.ch1 = 'a';
+
+s.name.ch2 = 'b';
+
+s.name.ch3 = 'c';
+
+s.name.ch4 = 'd';
+
+cout << s.age << endl;
+   // cout << s.ch << endl;
 
 
-    cout << sizeof(static_array) << endl;
-   //int * fixed_heap_dynamic_array = malloc(7 * sizeof(int));
-    //cout << sizeof(*fhda) << endl;
 
-    int x[3][4] = {0, 1 ,2 ,3 ,4 , 5 , 6 , 7 , 8 , 9 , 10 , 11};
- cout << x[2] << endl;
 
     return 0;
 }
