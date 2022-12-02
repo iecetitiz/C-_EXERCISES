@@ -10,12 +10,24 @@ void printChar(char* charPtr) {
     cout << *charPtr << endl;
 }
 
+
+
 void print(void* ptr, char type) {
     switch(type) {
     case 'i': cout << (*(int*)ptr)<< endl;break;
     case 'c': cout << (*(char*)ptr)<< endl;break;
     }
 }
+
+void increment(int x) {
+x++;
+}
+
+void increment_reference(int& x) {
+x++;
+}
+
+
 
 int main()
 {
@@ -46,4 +58,6 @@ int main()
 
     print(&number, 'i');
     return 0;
+
+
 }

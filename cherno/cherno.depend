@@ -1,9 +1,0 @@
-# depslib dependency file v1.0
-1665901106 source:c:\workspace\c++\cherno\main.cpp
-	<iostream>
-
-1665904015 source:c:\workspace\c++\cherno\log.cpp
-	"headFile.h"
-
-1665904015 c:\workspace\c++\cherno\headfile.h
-
