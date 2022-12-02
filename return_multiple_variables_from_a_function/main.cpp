@@ -51,5 +51,12 @@ int main()
     cout << "min number: "<< min << endl;
     cout << "max number: "<<max << endl;
 
+     cout << "-------pointer aritmetic--------" << endl;
+
+     cout << "numbers[0]: "<<numbers[0] << endl;
+     cout << "address of numbers[0]: "<<&numbers[0] << endl;
+     cout << "address of numbers array: "<<&numbers << endl;
+     cout << "address of numbers[1]: "<<*(numbers+1) << endl;
+
     return 0;
 }
