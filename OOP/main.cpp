@@ -4,26 +4,59 @@
 using namespace std;
 
 class YouTubeChannel{
-public: //by default private
+private: //by default private
     string Name;
     string OwnerName;
     int SubscribersCount;
     list<string> PublishedVideoTitles;
 
+    public:
     YouTubeChannel(string name, string ownerName) {
         Name = name;
         OwnerName = ownerName;
         SubscribersCount = 0;
     }
 
-    void GetInfo() { //i will run this codes in the object class instead main method
-    cout << "Name:" << Name<<endl;
-    cout << "Owner Name:" << OwnerName<<endl;
-    cout << "Subscriber count:" << SubscribersCount<<endl;
-    cout << "Videos:"<<endl;
-    for(string VideoTitle: PublishedVideoTitles) {
-        cout << VideoTitle<<endl;
+    void setName(string name) {
+    Name =  name;
     }
+
+    string getName() {
+    return Name;
+    }
+
+     void setOwnerName(string ownerName) {
+    OwnerName =  ownerName;
+    }
+
+    string getOwnerName() {
+    return OwnerName;
+    }
+
+
+    void Subscribe() {
+    SubscribersCount++;
+    }
+
+
+    void Unsubscribe() {
+        if(SubscribersCount > 0) {
+             SubscribersCount--;
+        }
+    }
+
+    void PublishVideo(string video) {
+    PublishedVideoTitles.push_back(video);
+    }
+
+    void GetInfo() { //i will run this codes in the object class instead main method
+        cout << "Name:" << Name<<endl;
+        cout << "Owner Name:" << OwnerName<<endl;
+        cout << "Subscriber count:" << SubscribersCount<<endl;
+        cout << "Videos:"<<endl;
+        for(string VideoTitle: PublishedVideoTitles) {
+        cout << VideoTitle<<endl;
+        }
 
     }
 };
@@ -31,9 +64,13 @@ public: //by default private
 int main()
 {
     YouTubeChannel ytChannel("CodeBeauty", "Saldina"); //icini bos birakamam
-    ytChannel.PublishedVideoTitles.push_back("C++ for beginners");
-    ytChannel.PublishedVideoTitles.push_back("html&css");
-    ytChannel.PublishedVideoTitles.push_back("C++ OOP");
+    ytChannel.PublishVideo("C++ for beginners");
+    ytChannel.PublishVideo("html&css");
+    ytChannel.PublishVideo("C++ OOP");
+    ytChannel.Subscribe();
+    ytChannel.Subscribe();
+    ytChannel.Subscribe();
+    ytChannel.Unsubscribe();
     ytChannel.GetInfo();
     //ytChannel.Name = "CodeBeauty";
     //ytChannel.OwnerName = "Saldina";
