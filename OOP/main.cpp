@@ -6,10 +6,11 @@ using namespace std;
 class YouTubeChannel{
 private: //by default private
     string Name;
-    string OwnerName;
+
     int SubscribersCount;
     list<string> PublishedVideoTitles;
-
+protected:
+    string OwnerName;
     public:
     YouTubeChannel(string name, string ownerName) {
         Name = name;
@@ -61,26 +62,42 @@ private: //by default private
     }
 };
 
+class CookingYouTubeChannel: public YouTubeChannel{
+    public:
+    CookingYouTubeChannel(string name, string ownerName): YouTubeChannel(name, ownerName){
+    }
+
+    void Practice(){
+    cout<<OwnerName<<"lets make practice!"<<endl;
+    }
+};
+
 int main()
 {
     YouTubeChannel ytChannel("CodeBeauty", "Saldina"); //icini bos birakamam
-    ytChannel.PublishVideo("C++ for beginners");
-    ytChannel.PublishVideo("html&css");
-    ytChannel.PublishVideo("C++ OOP");
-    ytChannel.Subscribe();
-    ytChannel.Subscribe();
-    ytChannel.Subscribe();
-    ytChannel.Unsubscribe();
-    ytChannel.GetInfo();
+    //ytChannel.PublishVideo("C++ for beginners");
+    //ytChannel.PublishVideo("html&css");
+    //ytChannel.PublishVideo("C++ OOP");
+   // ytChannel.Subscribe();
+   // ytChannel.Subscribe();
+    //ytChannel.Subscribe();
+    ////ytChannel.Unsubscribe();
+    //ytChannel.GetInfo();
+
+    CookingYouTubeChannel ytChannel2("Amy's Kitchen", "Amy");
+    CookingYouTubeChannel ytChannel3("John's Kitchen", "John");
+    ytChannel2.PublishVideo("Apple pie");
+    ytChannel2.PublishVideo("Chocolate Cake");
+    ytChannel2.Subscribe();
+    ytChannel2.Subscribe();
+    ytChannel2.GetInfo();
+
+    ytChannel2.Practice();
+    ytChannel3.Practice();
+
     //ytChannel.Name = "CodeBeauty";
     //ytChannel.OwnerName = "Saldina";
     //ytChannel.SubscribersCount = 1800;
     //ytChannel.PublishedVideoTitles = {"C++ for beginners", "html&css", "C++ OOP"};
-
-
-
-
-
-
     return 0;
 }
